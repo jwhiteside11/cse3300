@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.9
 
 RUN apt-get update \
   && apt-get clean \
@@ -16,5 +16,7 @@ RUN pip install Flask
 USER nyu
 
 COPY --chown=nyu:nyu . .
+
+EXPOSE 8080
 
 CMD [ "python", "./run.py" ]
